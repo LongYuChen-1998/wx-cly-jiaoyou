@@ -1,0 +1,8 @@
+// 优化昵称过长
+var wordSplit = function(word){
+  if(word.length > 4){
+    word = word.substring(0,4) + '...';
+  }
+  return word
+};
+module.exports.wordSplit = wordSplit;

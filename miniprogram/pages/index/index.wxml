@@ -1,0 +1,46 @@
+<!--miniprogram/pages/index/index.wxml-->
+
+
+<wxs src="../../utils/wordSplit.wxs" module="ml" />
+<wxs src="../../utils/unitFormat.wxs" module="m2" />
+
+<search />
+
+
+<view class="index">
+<!-- 轮播图组件 -->
+  <swiper class="index-swiper" indicator-dots="{{true}}"
+   autoplay="{{true}}" circular="{{true}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="index-tab">
+    <view class="{{ current == 'links' ? 'active' : ''}}" data-current="links" bindtap="hangleCurrent">推荐</view>
+    <view class="{{ current == 'time' ? 'active' : ''}}" data-current="time" bindtap="hangleCurrent">最新</view>
+  </view>
+
+  <!-- <wxs module='ml'>
+  var getMax = function(array){
+  return 123;
+  }
+  module.exports.getMax = getMax;
+  </wxs>
+  <view>{{ml.getMax()}}</view> -->
+<!-- 首页渲染数据 -->
+  <view class="index-list">
+    <view class="index-list-item" wx:for="{{listData}}">
+     <image mode="aspectFill" src="{{item.userPhoto}}" data-id="{{item._id}}" bindtap="handleDetail" />
+     <view class="index-list-text">
+        <text>{{ml.wordSplit(item.nickName)}}</text>
+        <text data-id="{{item._id}}" bindtap="handleLinks">
+            <text class="iconfont iconzan1;" ></text>
+            <text>{{m2.unitFormat(item.links)}}</text>
+        </text>
+     </view>
+    </view>
+  </view>
+</view>

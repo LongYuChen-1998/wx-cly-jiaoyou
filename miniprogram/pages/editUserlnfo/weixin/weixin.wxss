@@ -1,0 +1,7 @@
+/* miniprogram/pages/editUserlnfo/weixin/weixin.wxss */
+
+input{
+  border: 2px solid pink;
+  margin-left: 10%;
+  width: 80%
+}

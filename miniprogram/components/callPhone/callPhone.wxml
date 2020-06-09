@@ -1,0 +1,4 @@
+<!--components/callPhone/callPhone.wxml-->
+<text class="iconfont iconbodadianhua-"></text>
+<image bindtap="handleCallphone" src="/images/tabber/boda.png" />
+

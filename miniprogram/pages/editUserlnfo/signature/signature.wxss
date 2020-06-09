@@ -1,0 +1,6 @@
+/* miniprogram/pages/editUserlnfo/signature/signature.wxss */
+input{
+  border: 2px solid pink;
+  width: 80%;
+  margin-left: 10%;
+}

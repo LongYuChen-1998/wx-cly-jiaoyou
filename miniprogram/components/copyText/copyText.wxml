@@ -1,0 +1,3 @@
+<!--components/copyText/copyText.wxml-->
+
+<image bindtap="handleCopyText" src="/images/tabber/fuzhi.png"></image>
